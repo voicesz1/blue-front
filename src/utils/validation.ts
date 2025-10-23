@@ -22,7 +22,7 @@ export const registerSchema = z.object({
   cpf: cpfSchema,
   password: passwordSchema,
   confirmar: passwordSchema,
-  terminos: z.literal(true, { errorMap: () => ({ message: "Acepta los términos" }) }),
+  terminos: z.literal(true, { error: "Acepta los términos" }),
 }).refine((data) => data.password === data.confirmar, {
   path: ["confirmar"],
   message: "Las contraseñas no coinciden",
