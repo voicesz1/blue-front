@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "../utils/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Blue - Movilidad urbana inteligente",
@@ -15,8 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" />
       </head>
-      <body className="min-h-dvh bg-white text-[#231b1c] antialiased">
-        {children}
+      <body className="min-h-dvh antialiased bg-[var(--background-color)] text-[var(--text-color)]">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

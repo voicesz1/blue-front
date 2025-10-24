@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import AboutSection from "../components/AboutSection";
 import ServicesSection from "../components/ServicesSection";
 import WhyBlue from "../components/WhyBlue";
 import FeaturesSection from "../components/FeaturesSection";
@@ -13,12 +14,15 @@ import CTASection from "../components/CTASection";
 import Footer from "../components/Footer";
 import TravelPlanModal from "../components/TravelPlanModal";
 
+
+
 export default function HomePage() {
   const [openPlan, setOpenPlan] = useState(false);
   return (
     <main>
       <Header onPlanificar={() => setOpenPlan(true)} />
       <Hero onPlanificar={() => setOpenPlan(true)} />
+      <AboutSection />
       <ServicesSection />
       <WhyBlue />
       <FeaturesSection />

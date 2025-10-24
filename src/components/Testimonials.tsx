@@ -1,5 +1,5 @@
 "use client";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -33,30 +33,33 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-blue-50">
+    <section className="py-20 bg-[var(--surface-bg)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark">Lo que dicen nuestros usuarios</h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-color)]">Lo que dicen nuestros usuarios</h2>
+          <p className="mt-3 text-[var(--muted-text-color)] max-w-2xl mx-auto">
             Miles de personas confían en Blue todos los días
           </p>
         </div>
 
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           navigation
+          loop
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
           spaceBetween={24}
           slidesPerView={1}
+          slidesPerGroup={1}
           breakpoints={{
-            640: { slidesPerView: 1 },
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            640: { slidesPerView: 1, slidesPerGroup: 1 },
+            768: { slidesPerView: 2, slidesPerGroup: 2 },
+            1024: { slidesPerView: 3, slidesPerGroup: 3 },
           }}
           className="!px-2"
         >
           {testimonials.map((t) => (
             <SwiperSlide key={t.name}>
-              <div className="rounded-2xl bg-white shadow p-6">
+              <div className="rounded-2xl bg-[var(--card-bg)] text-[var(--card-text-color)] shadow p-6 border border-[var(--border-color)]">
                 <div className="flex items-center gap-3 mb-4">
                   <img
                     src={t.avatar}
@@ -64,8 +67,8 @@ export default function Testimonials() {
                     className="w-10 h-10 rounded-full object-cover"
                   />
                   <div>
-                    <div className="text-sm font-semibold text-brand-dark">{t.name}</div>
-                    <div className="text-xs text-gray-500">{t.role}</div>
+                    <div className="text-sm font-semibold text-[var(--text-color)]">{t.name}</div>
+                    <div className="text-xs text-[var(--muted-text-color)]">{t.role}</div>
                   </div>
                 </div>
 
@@ -75,7 +78,7 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <p className="text-gray-700">“{t.text}”</p>
+                <p className="text-[var(--muted-text-color)]">“{t.text}”</p>
               </div>
             </SwiperSlide>
           ))}

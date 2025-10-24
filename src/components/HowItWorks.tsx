@@ -43,8 +43,8 @@ export default function HowItWorks() {
     <section className="py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark">Cómo Funciona</h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-color)]">Cómo Funciona</h2>
+          <p className="mt-3 text-[var(--muted-text-color)] max-w-2xl mx-auto">
             Simple, rápido e intuitivo. Comienza a usar en minutos
           </p>
         </div>
@@ -58,22 +58,22 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="relative rounded-2xl bg-white shadow p-6"
+              className="relative rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow p-6"
             >
-              <div className="text-brand-blue text-3xl md:text-4xl font-bold mb-2">
+              <div className="text-[var(--primary-color)] text-3xl md:text-4xl font-bold mb-2">
                 {step.n}
               </div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-blue text-white">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[var(--primary-color)] text-white">
                   <i className={`${step.icon} text-xl`} />
                 </span>
-                <h3 className="text-lg font-semibold text-brand-dark">{step.title}</h3>
+                <h3 className="text-lg font-semibold text-[var(--text-color)]">{step.title}</h3>
               </div>
-              <p className="text-gray-700 text-sm">{step.desc}</p>
+              <p className="text-[var(--muted-text-color)] text-sm">{step.desc}</p>
 
               {/* Arrow to next step on desktop */}
               {idx < steps.length - 1 && (
-                <span className="hidden lg:block absolute right-[-20px] top-1/2 -translate-y-1/2 text-brand-blue">→</span>
+                <span className="hidden lg:block absolute right-[-20px] top-1/2 -translate-y-1/2 text-[var(--primary-color)]">→</span>
               )}
             </motion.div>
           ))}

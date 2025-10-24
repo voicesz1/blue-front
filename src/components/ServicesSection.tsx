@@ -23,11 +23,11 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[var(--surface-bg)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark">Nuestros Servicios</h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-color)]">Nuestros Servicios</h2>
+          <p className="mt-3 text-[var(--muted-text-color)] max-w-2xl mx-auto">
             Soluciones completas de movilidad y entrega para facilitar tu día a día
           </p>
         </div>
@@ -40,21 +40,21 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group rounded-2xl bg-white shadow p-6 hover:shadow-3xl hover:scale-[1.02] transition"
+              className="group rounded-2xl bg-[var(--card-bg)] text-[var(--card-text-color)] shadow p-6 hover:shadow-3xl hover:scale-[1.02] transition border border-[var(--border-color)]"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue text-white">
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[var(--primary-color)] text-[var(--on-primary-color)]">
                   <i className={`${s.icon} text-2xl`} />
                 </span>
-                <h3 className="text-xl font-semibold text-brand-dark">{s.title}</h3>
+                <h3 className="text-xl font-semibold text-[var(--text-color)]">{s.title}</h3>
               </div>
 
-              <p className="text-gray-700 mb-4">{s.desc}</p>
+              <p className="text-[var(--muted-text-color)] mb-4">{s.desc}</p>
 
               <ul className="space-y-2">
                 {s.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-gray-700">
-                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-brand-blue text-white text-xs">✓</span>
+                  <li key={f} className="flex items-center gap-2 text-[var(--muted-text-color)]">
+                    <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--primary-color)] text-[var(--on-primary-color)] text-xs">✓</span>
                     <span>{f}</span>
                   </li>
                 ))}

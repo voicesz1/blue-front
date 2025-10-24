@@ -38,11 +38,11 @@ const items = [
 
 export default function WhyBlue() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[var(--surface-bg)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-brand-dark">¿Por qué elegir Blue?</h2>
-          <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text-color)]">¿Por qué elegir Blue?</h2>
+          <p className="mt-3 text-[var(--muted-text-color)] max-w-2xl mx-auto">
             Tecnología de punta y compromiso con la excelencia en cada viaje
           </p>
         </div>
@@ -55,15 +55,15 @@ export default function WhyBlue() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.06 }}
-              className="rounded-2xl bg-gray-50 p-6 shadow hover:shadow-3xl hover:scale-[1.02] transition"
+              className="rounded-2xl bg-[var(--card-bg)] p-6 shadow hover:shadow-3xl hover:scale-[1.02] transition border border-[var(--border-color)]"
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-blue text-white">
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[var(--primary-color)] text-[var(--on-primary-color)]">
                   <i className={`${item.icon} text-2xl`} />
                 </span>
-                <h3 className="text-lg font-semibold text-brand-dark">{item.title}</h3>
+                <h3 className="text-lg font-semibold text-[var(--text-color)]">{item.title}</h3>
               </div>
-              <p className="text-gray-700">{item.desc}</p>
+              <p className="text-[var(--muted-text-color)]">{item.desc}</p>
             </motion.div>
           ))}
         </div>

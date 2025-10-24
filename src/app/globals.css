@@ -5,10 +5,57 @@
 :root {
   --brand-blue: #223c94;
   --brand-dark: #231b1c;
+  /* tema variáveis branco */
+  --background-color: #ffffff;
+  --text-color: #231b1c;
+  --muted-text-color: #4a4a4a;
+  --surface-bg: #f6f6f6;
+  --card-bg: #ffffff;
+  --card-text-color: #231b1c;
+  --primary-color: #223c94;
+  --on-primary-color: #ffffff;
+  --accent-color: #6aa8ff;
+  --border-color: #e5e7eb; /* gray-200 */
+  --link-color: var(--primary-color);
+}
+
+/* Theme variables - Dark */
+html.dark {
+  --background-color: #0f1419; /* page background - azul escuro elegante */
+  --text-color: #e8eaed;
+  --muted-text-color: #a8b4c0;
+  --surface-bg: #1a2332; /* section backgrounds - azul escuro suave */
+  --card-bg: #1e2936; /* cards and surfaces - contraste sutil */
+  --card-text-color: #e8eaed;
+  --primary-color: #5b8deb; /* azul vibrante mas elegante */
+  --on-primary-color: #ffffff;
+  --accent-color: #7aa6f5;
+  --border-color: #2d3948;
+  --link-color: #7aa6f5;
 }
 
 html, body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Apply theme variables globally */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+}
+
+/* Form elements follow theme colors */
+input, textarea, select {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+::placeholder {
+  color: var(--muted-text-color);
 }
 
 .logo-font {

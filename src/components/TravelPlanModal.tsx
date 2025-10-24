@@ -51,34 +51,34 @@ export default function TravelPlanModal({ open, onClose }: { open: boolean; onCl
   return (
     <div className="fixed inset-0 z-[60]">
       <div className="absolute inset-0 bg-black/40" onClick={onClose} />
-      <div className="absolute inset-x-0 top-10 mx-auto max-w-2xl rounded-2xl bg-white shadow-3xl p-6">
-        <h3 className="text-xl font-bold text-brand-dark">Planificar Viaje</h3>
-        <p className="text-sm text-gray-600 mb-4">Completa los datos y confirma tu viaje</p>
+      <div className="absolute inset-x-0 top-10 mx-auto max-w-2xl rounded-2xl bg-[var(--card-bg)] border border-[var(--border-color)] shadow-3xl p-6">
+        <h3 className="text-xl font-bold text-[var(--text-color)]">Planificar Viaje</h3>
+        <p className="text-sm text-[var(--muted-text-color)] mb-4">Completa los datos y confirma tu viaje</p>
 
         {/* Form */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="text-sm font-medium">Origen *</label>
-            <input value={data.origen} onChange={(e) => setData({ ...data, origen: e.target.value })} className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Ej: Av. Siempre Viva" />
+            <label className="text-sm font-medium text-[var(--text-color)]">Origen *</label>
+            <input value={data.origen} onChange={(e) => setData({ ...data, origen: e.target.value })} className="mt-1 w-full rounded-lg border border-[var(--border-color)] bg-[var(--surface-bg)] text-[var(--text-color)] px-3 py-2 focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent" placeholder="Ej: Av. Siempre Viva" />
             {errors.origen && <span className="text-red-600 text-xs">{errors.origen}</span>}
           </div>
           <div>
-            <label className="text-sm font-medium">Destino *</label>
-            <input value={data.destino} onChange={(e) => setData({ ...data, destino: e.target.value })} className="mt-1 w-full rounded-lg border px-3 py-2" placeholder="Ej: Plaza Central" />
+            <label className="text-sm font-medium text-[var(--text-color)]">Destino *</label>
+            <input value={data.destino} onChange={(e) => setData({ ...data, destino: e.target.value })} className="mt-1 w-full rounded-lg border border-[var(--border-color)] bg-[var(--surface-bg)] text-[var(--text-color)] px-3 py-2 focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent" placeholder="Ej: Plaza Central" />
             {errors.destino && <span className="text-red-600 text-xs">{errors.destino}</span>}
           </div>
           <div>
-            <label className="text-sm font-medium">Fecha *</label>
-            <input type="date" value={data.fecha} onChange={(e) => setData({ ...data, fecha: e.target.value })} className="mt-1 w-full rounded-lg border px-3 py-2" />
+            <label className="text-sm font-medium text-[var(--text-color)]">Fecha *</label>
+            <input type="date" value={data.fecha} onChange={(e) => setData({ ...data, fecha: e.target.value })} className="mt-1 w-full rounded-lg border border-[var(--border-color)] bg-[var(--surface-bg)] text-[var(--text-color)] px-3 py-2 focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent" />
             {errors.fecha && <span className="text-red-600 text-xs">{errors.fecha}</span>}
           </div>
           <div>
-            <label className="text-sm font-medium">Hora *</label>
-            <input type="time" value={data.hora} onChange={(e) => setData({ ...data, hora: e.target.value })} className="mt-1 w-full rounded-lg border px-3 py-2" />
+            <label className="text-sm font-medium text-[var(--text-color)]">Hora *</label>
+            <input type="time" value={data.hora} onChange={(e) => setData({ ...data, hora: e.target.value })} className="mt-1 w-full rounded-lg border border-[var(--border-color)] bg-[var(--surface-bg)] text-[var(--text-color)] px-3 py-2 focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent" />
             {errors.hora && <span className="text-red-600 text-xs">{errors.hora}</span>}
           </div>
           <div>
-            <label className="text-sm font-medium">Servicio *</label>
+            <label className="text-sm font-medium text-[var(--text-color)]">Servicio *</label>
             <select
               value={data.servicio}
               onChange={(e) => {
@@ -88,14 +88,14 @@ export default function TravelPlanModal({ open, onClose }: { open: boolean; onCl
                 setData({ ...data, servicio, pasajeros });
                 setErrors((prev) => ({ ...prev, pasajeros: "" }));
               }}
-              className="mt-1 w-full rounded-lg border px-3 py-2"
+              className="mt-1 w-full rounded-lg border border-[var(--border-color)] bg-[var(--surface-bg)] text-[var(--text-color)] px-3 py-2 focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent"
             >
               <option>Blue Car</option>
               <option>Blue Moto</option>
             </select>
           </div>
           <div>
-            <label className="text-sm font-medium">Pasajeros *</label>
+            <label className="text-sm font-medium text-[var(--text-color)]">Pasajeros *</label>
             <input
               type="number"
               min={1}
@@ -106,28 +106,28 @@ export default function TravelPlanModal({ open, onClose }: { open: boolean; onCl
                 const clamped = Math.min(Math.max(1, val), maxPasajeros);
                 setData({ ...data, pasajeros: clamped });
               }}
-              className="mt-1 w-full rounded-lg border px-3 py-2"
+              className="mt-1 w-full rounded-lg border border-[var(--border-color)] bg-[var(--surface-bg)] text-[var(--text-color)] px-3 py-2 focus:ring-2 focus:ring-[var(--primary-color)] focus:border-transparent"
             />
             {errors.pasajeros && <span className="text-red-600 text-xs">{errors.pasajeros}</span>}
           </div>
         </div>
 
         {/* Resumen */}
-        <div className="mt-4 rounded-xl bg-gray-50 p-4">
-          <h4 className="font-semibold mb-2">Resumen del viaje</h4>
-          <ul className="text-sm text-gray-700 space-y-1">
-            <li>Origen: <span className="font-medium">{data.origen || "-"}</span></li>
-            <li>Destino: <span className="font-medium">{data.destino || "-"}</span></li>
-            <li>Fecha: <span className="font-medium">{data.fecha || "-"}</span></li>
-            <li>Hora: <span className="font-medium">{data.hora || "-"}</span></li>
-            <li>Servicio: <span className="font-medium">{data.servicio}</span></li>
-            <li>Pasajeros: <span className="font-medium">{data.pasajeros}</span></li>
+        <div className="mt-4 rounded-xl bg-[var(--surface-bg)] border border-[var(--border-color)] p-4">
+          <h4 className="font-semibold mb-2 text-[var(--text-color)]">Resumen del viaje</h4>
+          <ul className="text-sm text-[var(--muted-text-color)] space-y-1">
+            <li>Origen: <span className="font-medium text-[var(--text-color)]">{data.origen || "-"}</span></li>
+            <li>Destino: <span className="font-medium text-[var(--text-color)]">{data.destino || "-"}</span></li>
+            <li>Fecha: <span className="font-medium text-[var(--text-color)]">{data.fecha || "-"}</span></li>
+            <li>Hora: <span className="font-medium text-[var(--text-color)]">{data.hora || "-"}</span></li>
+            <li>Servicio: <span className="font-medium text-[var(--text-color)]">{data.servicio}</span></li>
+            <li>Pasajeros: <span className="font-medium text-[var(--text-color)]">{data.pasajeros}</span></li>
           </ul>
         </div>
 
         <div className="mt-6 flex items-center gap-3">
-          <button onClick={onClose} className="px-4 py-2 rounded-full border">Cancelar</button>
-          <button onClick={submit} className="px-5 py-2 rounded-full bg-brand-blue text-white hover:brightness-110 transition disabled:opacity-50" disabled={confirmando}>
+          <button onClick={onClose} className="px-4 py-2 rounded-full border border-[var(--border-color)] text-[var(--text-color)] hover:bg-[var(--surface-bg)] transition">Cancelar</button>
+          <button onClick={submit} className="px-5 py-2 rounded-full bg-[var(--primary-color)] text-white hover:brightness-110 transition disabled:opacity-50" disabled={confirmando}>
             {confirmando ? "Confirmando..." : "Confirmar"}
           </button>
           {success && <span className="text-green-600 text-sm">¡Solicitud enviada con éxito!</span>}
